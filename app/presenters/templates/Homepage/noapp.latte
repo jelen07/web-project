@@ -1,0 +1,75 @@
+<!DOCTYPE html><!-- "' --></script></style></noscript></xmp>
+<meta charset="utf-8">
+<meta name=robots content=noindex>
+<meta name=generator content="app">
+<title>No Application</title>
+<link rel="shortcut icon" href="{$basePath}/favicon-noapp.png">
+<script src="/js/dynamics.min.js"></script>
+
+<style>
+	#no-app { background: white; width: 500px; margin: 70px auto; padding: 10px 20px }
+	#no-app p { font: 21px/1.5 Georgia,serif; background: none; color: #333; margin: 1.5em 0 }
+</style>
+
+<div id=no-app>
+
+	<div class="pin">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 640 640">
+			<path fill="#444" d="M320 386.496c76.48 0 140.544-25.984 144.416-59.936-11.392-31.872-23.808-66.688-36-100.864-8.448 24.352-55.2 41.632-108.416 41.632s-99.968-17.28-108.416-41.632c-12.192 34.176-24.608 68.992-35.968 100.864 3.872 33.952 67.904 59.936 144.384 59.936zM320 171.936c35.968 0 69.344-11.136 79.136-28.448-13.472-37.824-25.024-70.304-32.352-90.752-4.864-13.664-26.912-20.736-46.784-20.736s-41.92 7.072-46.784 20.736c-7.296 20.448-18.88 52.928-32.352 90.752 9.792 17.312 43.2 28.448 79.136 28.448zM600.96 418.112l-120.16-48.448 13.856 38.624c-0.704 40.928-80.128 73.568-174.656 73.568-94.496 0-173.984-32.608-174.656-73.568l13.856-38.624-120.16 48.448c-33.696 13.568-35.136 38.688-3.136 55.808l225.984 121.184c31.936 17.12 84.256 17.12 116.224 0l226.016-121.184c31.968-17.12 30.528-42.24-3.168-55.808z"></path>
+		</svg>
+    </div>
+
+	<p>This domain is not associated with an application.</p>
+
+</div>
+
+<script type="text/javascript">
+var pin = document.querySelector('.pin')
+var svg = document.querySelector('.pin svg')
+
+function horizontalBounce() {
+  // The bounce animation will return to the original state
+  // In this case, it will go from 0deg to -45deg to 0deg
+  dynamics.animate(pin, {
+    //rotateZ: -45
+  }, {
+    type: dynamics.bounce,
+    duration: 1800,
+    complete: verticalBounce
+  })
+}
+
+function verticalBounce() {
+  // We animate the two elements (svg, pin) independently
+  dynamics.animate(svg, {
+    scaleY: 0.8
+  }, {
+    type: dynamics.bounce,
+    duration: 800,
+    bounciness: 0
+  })
+
+  // Use the delay option to delay your animations
+  dynamics.animate(pin, {
+    translateY: -20
+  }, {
+    type: dynamics.forceWithGravity,
+    bounciness: 0,
+    duration: 500,
+    delay: 150
+  })
+
+  dynamics.animate(svg, {
+    scaleY: 0.8
+  }, {
+    type: dynamics.bounce,
+    duration: 800,
+    bounciness: 600,
+    delay: 650,
+    complete: horizontalBounce
+  })
+}
+
+// Start the horizontal bounce first!
+verticalBounce();
+</script>

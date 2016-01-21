@@ -25,7 +25,7 @@ di:
 
 
 routing:
-	debugger: yes
+	debugger: yes # default
 
 
 session:

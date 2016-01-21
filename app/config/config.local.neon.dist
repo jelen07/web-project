@@ -1,0 +1,9 @@
+parameters:
+
+
+doctrine:
+    user: ENTER_USER_NAME
+    password: ENTER_USER_PASSWORD
+    dbname: ENTER_DATABASE_NAME
+    metadata:
+        App: %appDir%
