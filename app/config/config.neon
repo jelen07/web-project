@@ -1,6 +1,12 @@
 # WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
 # https://nette.org/security-warning
 
+includes:
+	- extensions.neon
+	- factories.neon
+	- services.neon
+
+
 parameters:
 
 
@@ -14,9 +20,15 @@ application:
 		*: App\*Module\Presenters\*Presenter
 
 
+di:
+	debugger: yes
+
+
+routing:
+	debugger: yes
+
+
 session:
 	expiration: 14 days
+	debugger: yes
 
-
-services:
-	router: App\RouterFactory::createRouter

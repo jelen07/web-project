@@ -1,2 +1,9 @@
 /vendor
 app/config/config.local.neon
+
+.buildpath
+.project
+.idea
+.settings
+.DS_Store
+._.DS_Store
