@@ -98,7 +98,7 @@
 - master - will always reflect the most current production-ready state of the software
 - develop - reflects the latest development for the next release
 
-### Supporting branches
+### Supporting branches
 - Feature branches
 - Release branches help you prepare the work on develop that will be included in the next release version
 	- Ok
